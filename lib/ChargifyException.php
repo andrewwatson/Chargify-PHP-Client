@@ -21,6 +21,10 @@ class ChargifyValidationException extends ChargifyException {
 
 		parent::__construct($message, intval($http_code));
 	}
+
+	public function getErrors() {
+		return $this->errors;
+	}
 }
 
 class ChargifyNotFoundException extends ChargifyException {
@@ -41,6 +45,7 @@ class ChargifyNotFoundException extends ChargifyException {
 
 		parent::__construct($message, intval($http_code));
 	}	
+
 }
 
 class ChargifyError
